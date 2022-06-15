@@ -1,0 +1,69 @@
+<app-header></app-header>
+<section class="hero text-center p-52 -z-[1]">
+  <h1 class="text-7xl font-black text-white mb-3 leading-none">
+    Looking for<br />
+    a roommate?
+  </h1>
+  <app-button text="start exploring"></app-button>
+</section>
+<section class="container how text-center my-20">
+  <div class="info">
+    <app-heading text="How does it work?"></app-heading>
+    <app-sub-title text="As simple as opening a can"></app-sub-title>
+  </div>
+
+  <div class="cards flex justify-center gap-8 mt-10">
+    <div class="card flex-none">
+      <div class="w-64 h-64 rounded-xl overflow-hidden relative bg-black">
+        <img
+          src="/assets/img/card.png"
+          alt="create your account"
+          class="h-full w-full object-cover opacity-80"
+        />
+        <p
+          class="absolute bottom-4 left-4 text-white font-black leading-[0.9] text-left text-[44px]"
+        >
+          create your account
+        </p>
+      </div>
+    </div>
+    <div class="card flex-none">
+      <div class="w-64 h-64 rounded-xl overflow-hidden relative bg-black">
+        <img
+          src="/assets/img/card2.png"
+          alt="Create a demand"
+          class="h-full w-full object-cover opacity-80"
+        />
+        <p
+          class="absolute bottom-4 left-4 text-white font-black leading-[0.9] text-left text-[44px]"
+        >
+          create a demand
+        </p>
+      </div>
+    </div>
+    <div class="card flex-1">
+      <div class="w-full h-64 rounded-xl overflow-hidden relative bg-lightBlue">
+        <div class="absolute bottom-8 left-8 text-left">
+          <p
+            class="text-white font-black leading-[0.9] text-left text-[44px] mb-4"
+          >
+            find your next<br />
+            roommate!
+          </p>
+          <app-button
+            text="start exploring"
+            color="white"
+            [icon]="true"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container text-center my-20">
+  <div class="info">
+    <app-heading text="Start exploring"></app-heading>
+    <app-sub-title text="check the latest offers and demands"></app-sub-title>
+  </div>
+<app-products-container></app-products-container>
+</section>

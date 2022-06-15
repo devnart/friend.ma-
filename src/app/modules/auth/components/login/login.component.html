@@ -1,5 +1,7 @@
 <main class="flex h-screen">
-  <div class="place-content-center basis-1/2 md:basis-3/5  h-full bg-blue hidden sm:grid">
+  <div
+    class="place-content-center basis-1/2 md:basis-3/5 h-full bg-blue hidden sm:grid"
+  >
     <img
       class="h-full object-contain"
       src="/assets/img/login-image.png"
@@ -15,19 +17,25 @@
       <p class="text-sm text-gray-400">
         check the lastest offers or create one
       </p>
+      <button type="button" (click)="authService.GoogleAuth()">
+        Log in with Google
+      </button>
       <div
         id="g_id_onload"
         data-client_id="613366948137-a2n1vfs8jtaaafackimkfk05teag99si.apps.googleusercontent.com"
-        data-login_uri="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAsPQ6JmNPtEaQeNcuUGmBWdscyH43OljM"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-login_uri="https://identitytoolkit.googleapis.com/v1/accounts:signInWithGoogle?key=AIzaSyAsPQ6JmNPtEaQeNcuUGmBWdscyH43OljM"
         data-auto_prompt="false"
       ></div>
+
       <div
-        class="g_id_signin my-7 font-bold"
+        class="g_id_signin"
         data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="continue_with"
         data-shape="rectangular"
+        data-theme="outline"
+        data-text="signin_with"
+        data-size="large"
         data-logo_alignment="center"
       ></div>
 
@@ -36,16 +44,25 @@
       </p>
 
       <div class="form-container my-7">
-        <form class="w-full flex flex-col" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+        <form
+          class="w-full flex flex-col"
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit(loginForm)"
+        >
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Ex. am@gmail.com" />
+            <input matInput placeholder="Ex. user@example.com" />
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput placeholder="******" type="password"/>
+            <input matInput placeholder="******" type="password" />
           </mat-form-field>
-          <button type="submit" class="text-white bg-lightBlue p-4 hover:bg-blue font-medium rounded-lg text-sm">Login</button>
+          <button
+            type="submit"
+            class="text-white bg-lightBlue p-4 hover:bg-blue font-medium rounded-lg text-sm"
+          >
+            Login
+          </button>
         </form>
       </div>
     </div>
