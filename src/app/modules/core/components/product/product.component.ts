@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Offer } from 'src/app/modules/offer/interfaces/offer';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -7,7 +7,7 @@ import { Offer } from 'src/app/modules/offer/interfaces/offer';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() offer: Offer = {} as Offer;
+  @Input() data:any = {} as any;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 <div
-  class="flex items-center gap-8 bg-lighterBlue px-7 py-2 rounded-xl text-left justify-between text-lightBlue"
+  class="flex items-center gap-8 bg-lighterBlue px-7 py-2 rounded-xl text-left justify-between text-lightBlue" [ngClass]="{'text-orange bg-orangeGray' : data.type == 'demand'}"
 >
   <div class="info-container flex gap-5 items-center">
     <div class="rounded-full overflow-hidden w-20 h-20">
@@ -7,32 +7,33 @@
     </div>
     <div class="name">
       <p class="font-bold text-sm sm:text-lg md:text-xl text-gray-800">
-        {{ offer.user.username }}
+        {{ data.user.username }}
       </p>
       <p class="text-sm text-gray-500">London - <span class="age">22</span></p>
     </div>
   </div>
   <div class="city">
-    <p class="text-sm text-blueGray">City</p>
-    <p class="font-bold text-sm sm:text-lg md:text-xl">{{ offer.city }}</p>
+    <p class="text-sm text-blueGray" [ngClass]="{'text-lightOrange' : data.type == 'demand'}">City</p>
+    <p class="font-bold text-sm sm:text-lg md:text-xl">{{ data.city }}</p>
   </div>
   <div class="budget">
-    <p class="text-sm text-blueGray">Budget</p>
-    <p class="font-bold text-sm sm:text-lg md:text-xl">{{ offer.price }} DH</p>
+    <p class="text-sm text-blueGray" [ngClass]="{'text-lightOrange' : data.type == 'demand'}">Budget</p>
+    <p class="font-bold text-sm sm:text-lg md:text-xl">{{ data.price ? data.price : data.budget }} DH</p>
   </div>
   <div class="availability">
-    <p class="text-sm text-blueGray">Availability</p>
+    <p class="text-sm text-blueGray" [ngClass]="{'text-lightOrange' : data.type == 'demand'}">Availability</p>
     <p class="font-bold text-sm sm:text-lg md:text-xl">
-      {{offer.availability ? 'Immediatly' : offer.availableFrom}}
+      {{data.availability || data.availableFrom == null ? 'Immediatly' : data.availableFrom}}
     </p>
   </div>
   <div class="type">
-    <p class="text-sm text-blueGray">Type</p>
-    <p class="font-bold text-sm sm:text-lg md:text-xl">{{ offer.type }}</p>
+    <p class="text-sm text-blueGray" [ngClass]="{'text-lightOrange' : data.type == 'demand'}">Type</p>
+    <p class="font-bold text-sm sm:text-lg md:text-xl">{{ data.type }}</p>
   </div>
   <div class="icon">
-    <a routerLink="/offer/{{ offer.id }}">
-      <img src="assets/icons/arrow-fill-blue.svg" alt="" />
+    <a routerLink="/data/{{ data.id }}">
+      <img src="assets/icons/arrow-fill-blue.svg" alt="" *ngIf="data.type == 'offer'" />
+      <img src="assets/icons/arrow-fill-red.svg" alt="" *ngIf="data.type == 'demand'" />
     </a>
   </div>
 </div>
