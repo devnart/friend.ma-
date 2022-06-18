@@ -1,0 +1,58 @@
+<div class="bg-gray-100 flex flex-col items-center gap-4 py-7 rounded-lg px-10">
+    <div class="avatar w-20 h-20 rounded-full overflow-hidden">
+        <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+    </div>
+    <div class="user-info text-gray-400 text-center">
+        <p class="font-medium text-lg leading-none text-gray-800">Hakim Jellaba</p>
+        <p>Fes - 23</p>
+    </div>
+    <div class="w-full">
+        <div class="item">
+            <div>
+                <div class="icon"><img src="assets/icons/budget.svg" alt="budget icon"></div>
+                <p class="label">Budget</p>
+            </div>
+            <div>
+                <p class="value">{{offer?.price}} DH</p>
+            </div>
+        </div>
+        <div class="item">
+            <div>
+                <div class="icon"><img src="assets/icons/place.svg" alt="place icon"></div>
+                <p class="label">City</p>
+            </div>
+            <div>
+                <p class="value">{{offer?.city}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <div>
+                <div class="icon"><img src="assets/icons/place.svg" alt="place icon"></div>
+                <p class="label">Street</p>
+            </div>
+            <div>
+                <p class="value">{{offer?.address}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <div>
+                <div class="icon"><img src="assets/icons/time.svg" alt="time icon"></div>
+                <p class="label">Availability</p>
+            </div>
+            <div>
+                <p class="value">{{offer?.availability ? 'Immediatly' : offer?.availableFrom}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <div>
+                <div class="icon"><img src="assets/icons/home.svg" alt="house icon"></div>
+                <p class="label">Room Type</p>
+            </div>
+            <div>
+                <p class="value">{{offer?.roomType}}</p>
+            </div>
+        </div>
+
+        <button mat-raised-button (click)="openDialog()" class="bg-lightBlue w-full rounded text-white py-5 mt-6 font-medium hover:bg-blue">Contact Hakim</button>
+    </div>
+</div>

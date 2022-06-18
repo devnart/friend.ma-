@@ -1,9 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Demand } from 'src/app/modules/demand/interfaces/demand';
-import { Offer } from 'src/app/modules/offer/interfaces/offer';
-import { Observable,forkJoin } from 'rxjs';
-import { DemandService } from 'src/app/modules/demand/services/demand.service';
-import { OfferService } from 'src/app/modules/offer/services/offer.service';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/modules/product/services/product.service';
+import { Product } from 'src/app/modules/product/interfaces/product';
 
 @Component({
   selector: 'app-home',
@@ -12,21 +10,23 @@ import { OfferService } from 'src/app/modules/offer/services/offer.service';
 })
 export class HomeComponent implements OnInit {
 
-  @Input() offers: Offer[];
-  @Input() demands: Demand[];
+  products: Product[] = [];
 
-  products: any[];
-  constructor(private offerService:OfferService, private demandService:DemandService ) { }
+  constructor(private productService:ProductService,private route:Router ) { }
 
   ngOnInit(): void {
-    this.nestedProducts().subscribe(data=>{
-      this.products = data;
-    })
+    this.getProducts();
   }
-  
-  nestedProducts():Observable<any[]>{
-    let offers = this.offerService.getOffers();
-    let demands = this.demandService.getDemands();
-    return forkJoin([offers,demands]);
+
+
+  onClick(){
+    this.route.navigate(['/all']);
+  }
+
+  getProducts() : void{
+    this.productService.getProducts(0,6).subscribe(data => {
+      this.products = data.content;
+      console.log(this.products);
+    })
   }
 }

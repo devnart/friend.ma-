@@ -1,4 +1,3 @@
-<app-header></app-header>
 <section class="hero text-center p-52 -z-[1]">
   <h1 class="text-7xl font-black text-white mb-3 leading-none">
     Looking for<br />
@@ -54,6 +53,7 @@
             text="start exploring"
             color="white"
             [icon]="true"
+            (click)="onClick()"
           ></app-button>
         </div>
       </div>
@@ -65,5 +65,18 @@
     <app-heading text="Start exploring"></app-heading>
     <app-sub-title text="check the latest offers and demands"></app-sub-title>
   </div>
-<app-products-container></app-products-container>
+<app-products-container>
+  <app-product *ngFor="let product of products" [data]="product"></app-product>
+</app-products-container>
+<app-button text="all offers" [icon]="true" [center]="true" (click)="onClick()"></app-button>
+</section>
+<section class="by-city container text-center my-20">
+  <app-heading text="Browse By City"></app-heading>
+  <app-sub-title text="check all offers and demands by specefic city"></app-sub-title>
+  <app-products-container layout="grid">
+    <app-city-card city="casablanca"></app-city-card>
+    <app-city-card city="tanger"></app-city-card>
+    <app-city-card city="rabat"></app-city-card>
+    <app-city-card city="marrakech"></app-city-card>
+  </app-products-container>
 </section>

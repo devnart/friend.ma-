@@ -23,6 +23,7 @@ module.exports = {
         'lightBlue': '#503FFD',
         'lighterBlue': '#FBFAFF',
         'blueGray': '#BAC1FF',
+        'darkBlue': '#08005B',
         'orange':'#DF5317',
         'orangeGray':'#FFFBF8',
         'lightOrange':'#FEA18C',

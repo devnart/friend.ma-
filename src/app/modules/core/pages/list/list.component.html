@@ -1,0 +1,15 @@
+<main class="container">
+    <section class="hero py-20">
+        <h1 class="text-4xl text-lightBlue font-black mb-4">Find your ideal roommate!</h1>
+        <div class="flex gap-3">
+            <app-drop-down (selectedItem)="handleSelectedCity($event)" [items]="cities" text="choose a city"></app-drop-down>
+            <app-simple-drop-down (selectedItem)="selectedType($event)" [items]="types" text="Type" ></app-simple-drop-down>
+            <!-- <app-simple-drop-down (selectedItem)="selectedType($event)" [items]="budgets" text="Budget" ></app-simple-drop-down> -->
+            <app-button (click)="resetFilters()" [disabled]="cleared" text="clear filters"></app-button>
+        </div>
+    </section>
+    <app-products-container>
+        <app-product *ngFor="let product of products" [data]="product"></app-product>
+        <app-button [loading]="loading" class="text-center mt-3" text="Load more" [center]="true" [disabled]="lastPage" (click)="loadMore()"></app-button>
+    </app-products-container>
+</main>

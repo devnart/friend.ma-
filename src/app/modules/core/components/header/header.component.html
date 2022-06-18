@@ -1,10 +1,10 @@
-<header class="container absolute left-1/2 top-5 -translate-x-1/2 -translate-y-1/2 w-full flex items-center justify-between my-5">
+<header class="container w-full flex items-center justify-between my-5" [ngClass]="{'absolute left-1/2 top-5 -translate-x-1/2 -translate-y-1/2' : home}">
     <div class="logo">
-        <h1 class="text-2xl font-bold text-white">friend.ma</h1>
+        <a routerLink="/"><h2 class="text-2xl font-bold text-white" [ngClass]="{'text-lightBlue' : !home}">friend.ma</h2></a>
     </div>
     <div class="menu">
         <div class="menu-item">
-            <app-button text="Get Started" color="white"></app-button>
+            <app-button text="Get Started" [color]="home ? 'white' : 'blue'"></app-button>
         </div>
     </div>
 </header>

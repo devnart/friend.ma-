@@ -7,4 +7,5 @@ export interface Merged {
     availability: boolean;
     availableFrom: Date;
     type: string;
+    createdDate: Date;
 }

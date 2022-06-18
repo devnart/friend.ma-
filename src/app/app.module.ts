@@ -16,7 +16,7 @@ import { AppLayoutComponent } from './_layouts/app-layout/app-layout.component';
     AppComponent,
     SiteLayoutComponent,
     AppLayoutComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,7 @@ import { AppLayoutComponent } from './_layouts/app-layout/app-layout.component';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    RouterModule
+    RouterModule,
 
   ],
   providers: [],

@@ -15,4 +15,5 @@ export interface Offer {
     availableFrom: Date;
     images: string[];
     user: User;
+    createdDate: Date;
 }
