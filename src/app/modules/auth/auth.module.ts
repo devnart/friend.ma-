@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { environment } from '../../../environments/environment';
+import * as firebaseui from 'firebaseui';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { environment } from '../../../environments/environment';
     MatInputModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
 
   ]
 })

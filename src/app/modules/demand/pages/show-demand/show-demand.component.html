@@ -1,0 +1,21 @@
+<main class="container my-20">
+
+    <section class="flex gap-10 mt-14">
+
+        <div class="flex-[2]">
+            <h1 class="text-4xl text-slate-800 font-bold w-4/5">{{demand?.title}}</h1>
+            <div class="my-3">
+                <p class="text-sm text-gray-500 italic">{{demand?.createdDate}}</p>
+                <!-- add to favorite -->
+                
+            </div>
+            <p class="mt-10 text-gray-700">{{demand?.description}}</p>
+        </div>
+
+        <div class="flex-[1]">
+           <app-contact-card [product]="demand"></app-contact-card>
+        </div>
+
+    </section>
+
+</main>

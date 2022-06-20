@@ -7,6 +7,9 @@ import { ListComponent } from './modules/core/pages/list/list.component';
 import { CityComponent } from './modules/core/pages/city/city.component';
 import { ShowOfferComponent } from './modules/offer/pages/show-offer/show-offer.component';
 import { NotFoundComponent } from './modules/core/pages/not-found/not-found.component';
+import { ShowDemandComponent } from './modules/demand/pages/show-demand/show-demand.component';
+import { AddProductComponent } from './modules/core/pages/add-product/add-product.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { 
@@ -14,18 +17,19 @@ const routes: Routes = [
     component: SiteLayoutComponent,
     children: [
       { path: '', component: HomeComponent},
-      { path: 'all', component: ListComponent, pathMatch: 'full'  },
-      { path: 'city/:city', component: CityComponent, pathMatch: 'full'  },
-      { path: 'offer/:id', component: ShowOfferComponent, pathMatch: 'full'  },
-      // 404
+      { path: 'all', component: ListComponent },
+      { path: 'city/:city', component: CityComponent },
+      { path: 'offer/:id', component: ShowOfferComponent},
+      { path: 'demand/:id', component: ShowDemandComponent },
+      { path: 'add', component: AddProductComponent, canActivate: [AuthGuard] },
       { path: '404', component: NotFoundComponent },
-      { path: '**', redirectTo: '/404' },
     ]
   },
   {
     path: 'login',
     component: LoginComponent 
-  }
+  },
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({

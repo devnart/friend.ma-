@@ -17,27 +17,9 @@
       <p class="text-sm text-gray-400">
         check the lastest offers or create one
       </p>
-      <button type="button" (click)="authService.GoogleAuth()">
-        Log in with Google
-      </button>
-      <div
-        id="g_id_onload"
-        data-client_id="613366948137-a2n1vfs8jtaaafackimkfk05teag99si.apps.googleusercontent.com"
-        data-context="signin"
-        data-ux_mode="popup"
-        data-login_uri="https://identitytoolkit.googleapis.com/v1/accounts:signInWithGoogle?key=AIzaSyAsPQ6JmNPtEaQeNcuUGmBWdscyH43OljM"
-        data-auto_prompt="false"
-      ></div>
+      <div id="google-auth-container" class="auth-container">
 
-      <div
-        class="g_id_signin"
-        data-type="standard"
-        data-shape="rectangular"
-        data-theme="outline"
-        data-text="signin_with"
-        data-size="large"
-        data-logo_alignment="center"
-      ></div>
+      </div>
 
       <p class="capitalize text-xs text-gray-400 text-center">
         or sign in with email

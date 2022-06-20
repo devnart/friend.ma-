@@ -13,7 +13,7 @@
                 <p class="label">Budget</p>
             </div>
             <div>
-                <p class="value">{{offer?.price}} DH</p>
+                <p class="value">{{product?.price ?? product?.budget}} DH</p>
             </div>
         </div>
         <div class="item">
@@ -22,16 +22,16 @@
                 <p class="label">City</p>
             </div>
             <div>
-                <p class="value">{{offer?.city}}</p>
+                <p class="value">{{product?.city}}</p>
             </div>
         </div>
-        <div class="item">
+        <div class="item" *ngIf="product?.address">
             <div>
                 <div class="icon"><img src="assets/icons/place.svg" alt="place icon"></div>
                 <p class="label">Street</p>
             </div>
             <div>
-                <p class="value">{{offer?.address}}</p>
+                <p class="value">{{product?.address}}</p>
             </div>
         </div>
         <div class="item">
@@ -40,7 +40,7 @@
                 <p class="label">Availability</p>
             </div>
             <div>
-                <p class="value">{{offer?.availability ? 'Immediatly' : offer?.availableFrom}}</p>
+                <p class="value">{{product?.availability ? 'Immediatly' : product?.availableFrom}}</p>
             </div>
         </div>
         <div class="item">
@@ -49,10 +49,14 @@
                 <p class="label">Room Type</p>
             </div>
             <div>
-                <p class="value">{{offer?.roomType}}</p>
+                <p class="value">{{product?.roomType}}</p>
             </div>
         </div>
 
         <button mat-raised-button (click)="openDialog()" class="bg-lightBlue w-full rounded text-white py-5 mt-6 font-medium hover:bg-blue">Contact Hakim</button>
     </div>
+</div>
+<div class="flex gap-3 text-red-600 font-medium mt-3 justify-end ">
+    <img src="assets/icons/flag.svg" alt="">
+    <p>Report this {{product?.type}}</p>
 </div>

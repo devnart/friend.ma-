@@ -23,5 +23,10 @@ export class OfferService {
   getOfferById(id:number):Observable<HttpResponse<Offer>>{
     return this.http.get<Offer>(`${environment.apiUrl}/offer/${id}`, {observe: 'response'});
   }
+
+  createOffer(offer:FormData):Observable<Offer>{
+    // formData.append('im', offer)
+    return this.http.post<Offer>(`${environment.apiUrl}/offer`, offer);
+  }
   
 }

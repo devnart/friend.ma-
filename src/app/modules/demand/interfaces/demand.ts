@@ -1,3 +1,4 @@
+import { User } from "../../offer/interfaces/user";
 export interface Demand {
     id: number;
     type: string;
@@ -8,4 +9,6 @@ export interface Demand {
     roomType: string;
     availability: boolean;
     availableFrom: Date;
+    createdDate: Date;
+    user: User;
 }

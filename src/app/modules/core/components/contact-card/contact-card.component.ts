@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Offer } from 'src/app/modules/offer/interfaces/offer';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { Demand } from 'src/app/modules/demand/interfaces/demand';
 
 @Component({
   selector: 'app-contact-card',
@@ -10,7 +11,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class ContactCardComponent implements OnInit {
 
-  @Input() offer:Offer
+  @Input() product:any
 
   constructor(public dialog:MatDialog) { }
 
@@ -18,7 +19,7 @@ export class ContactCardComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent,{data: this.offer.user.phone});
+    const dialogRef = this.dialog.open(DialogComponent,{data: this.product.user.phone});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

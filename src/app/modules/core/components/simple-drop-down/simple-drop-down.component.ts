@@ -7,6 +7,7 @@ import { Component, OnInit,OnChanges, Input, ViewChild, Output, EventEmitter, El
 })
 export class SimpleDropDownComponent implements OnInit {
   state: boolean = false;
+  @Input() large: boolean = false;
   @ViewChild('button') button: ElementRef;
   @ViewChild('span') span: ElementRef;
   @Input() items: any[];

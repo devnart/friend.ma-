@@ -1,4 +1,4 @@
-<button [disabled]="disabled" class="disabled:opacity-40 disabled:cursor-not-allowed rounded bg-lightBlue hover:bg-blue text-white font-bold px-7 py-3 text-sm cursor-pointer" [ngClass]="{'bg-white text-lightBlue hover:bg-gray-200' : color == 'white','flex items-center gap-2' : icon, 'mx-auto' : center}">
+<button [disabled]="disabled" [type]="buttonType" class="disabled:opacity-40 disabled:cursor-not-allowed rounded bg-lightBlue hover:bg-blue text-white font-bold px-7 py-3 text-sm cursor-pointer" [ngClass]="{'bg-white text-lightBlue hover:bg-gray-200' : color == 'white','flex items-center gap-2' : icon, 'mx-auto' : center}">
     {{loading ? '' : text }}
     <mat-spinner *ngIf="loading" [diameter]="26"></mat-spinner>
     <div class="icon" *ngIf="icon">

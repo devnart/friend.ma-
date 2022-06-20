@@ -18,6 +18,8 @@ import { Router } from '@angular/router';
 })
 export class DropDownComponent implements OnInit {
   state: boolean = false;
+  @Input() redirect: boolean = true;
+  @Input() large: boolean = false;
   @ViewChild('button') button: ElementRef;
   @ViewChild('span') span: ElementRef;
   @Input() items: any[];
@@ -54,7 +56,8 @@ export class DropDownComponent implements OnInit {
   handleSelect(event: any) {
     this.span.nativeElement.innerText = event.target.innerText;
     this.state = false;
-    this.router.navigate(['/city', event.target.innerText.toLowerCase()]);
+    if(this.redirect){
+    this.router.navigate(['/city', event.target.innerText.toLowerCase()]);}
     this.selectedItem.emit(event.target.innerText);
   }
 

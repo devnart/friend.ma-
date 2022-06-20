@@ -13,7 +13,8 @@ export class ButtonComponent implements OnInit {
   @Input() icon: boolean = false;
   @Input() center: boolean = false;
   @Input() disabled: boolean = false;
-
+  @Input() buttonType: string = 'button';
+  
   @Output() click: EventEmitter<any> = new EventEmitter();
   constructor() { }
 

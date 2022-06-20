@@ -7,7 +7,7 @@
     </div>
     <div class="name">
       <p class="font-bold text-sm sm:text-lg md:text-xl text-gray-800">
-        {{ data.user.username }}
+        Hamza
       </p>
       <p class="text-sm text-gray-500">London - <span class="age">22</span></p>
     </div>
@@ -23,7 +23,7 @@
   <div class="availability">
     <p class="text-sm text-blueGray" [ngClass]="{'text-lightOrange' : data.type == 'demand'}">Availability</p>
     <p class="font-bold text-sm sm:text-lg md:text-xl">
-      {{data.availability || data.availableFrom == null ? 'Immediatly' : data.availableFrom}}
+      {{data.availability ? 'Immediatly' : data.available_from}}
     </p>
   </div>
   <div class="type">

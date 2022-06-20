@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OfferService } from '../../services/offer.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Offer } from '../../interfaces/offer';
-import { of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-show-offer',
   templateUrl: './show-offer.component.html',
@@ -11,6 +12,7 @@ import { of } from 'rxjs';
 export class ShowOfferComponent implements OnInit {
   id: number;
   offer: Offer;
+  url: string = environment.apiUrl;
   constructor(
     private route: ActivatedRoute,
     private router: Router,

@@ -21,8 +21,12 @@ import { ContactCardComponent } from './components/contact-card/contact-card.com
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
-
-
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -43,19 +47,27 @@ import { DialogComponent } from './components/dialog/dialog.component';
     CityComponent,
     ContactCardComponent,
     NotFoundComponent,
-    DialogComponent
+    DialogComponent,
+    AddProductComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     ButtonComponent,
     ContactCardComponent
-  ]
+  ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+],
 })
 export class CoreModule { }

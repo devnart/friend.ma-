@@ -5,27 +5,21 @@
         
     </div>
     <div class="img-grid grid grid-cols-3 grid-rows-2 gap-4 h-[450px] mb-10">
-        <div class="img-item col-span-2 row-span-2 rounded-lg  overflow-hidden">
-            <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
-        </div>
-        <div class="img-item rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
-        </div>
-        <div class="img-item rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+        <div *ngFor="let image of offer?.images" class="img-item first:col-span-2 first:row-span-2 rounded-lg  overflow-hidden">
+            <img class="h-full w-full object-cover" [src]="url+'/images/'+image.image" alt="">
         </div>
     </div>
     
     <section class="flex gap-10 mt-14">
 
         <div class="flex-[2]">
-            <h1 class="text-4xl text-slate-800 font-bold">{{offer?.title}}</h1>
-            <p class="text-lg text-gray-400 ">{{offer?.rooms}} rooms - <img class="inline w-5 ml-2 mr-1" src="assets/icons/users.svg" alt="users icon">{{offer?.rooms}}</p>
+            <h1 class="text-4xl text-slate-800 font-bold w-4/5">{{offer?.title}}</h1>
+            <p class="text-lg text-gray-400 mt-2 ">{{offer?.rooms}} rooms - <img class="inline w-5 ml-2 mr-1" src="assets/icons/users.svg" alt="users icon">{{offer?.rooms}}</p>
             <p class="mt-10 text-gray-700">{{offer?.description}}</p>
         </div>
 
         <div class="flex-[1]">
-            <app-contact-card [offer]="offer"></app-contact-card>
+            <app-contact-card [product]="offer"></app-contact-card>
         </div>
 
     </section>

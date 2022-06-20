@@ -1,3 +1,4 @@
+import { Image } from "./image";
 import { User } from "./user";
 
 export interface Offer {
@@ -13,7 +14,7 @@ export interface Offer {
     roomType: string;
     availability: boolean;
     availableFrom: Date;
-    images: string[];
+    images: Image[];
     user: User;
     createdDate: Date;
 }

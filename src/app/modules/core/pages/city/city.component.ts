@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OfferService } from 'src/app/modules/offer/services/offer.service';
 import { DemandService } from 'src/app/modules/demand/services/demand.service';
 import { Offer } from 'src/app/modules/offer/interfaces/offer';
-
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
@@ -18,6 +18,7 @@ import { Offer } from 'src/app/modules/offer/interfaces/offer';
 })
 
 export class CityComponent implements OnInit {
+  user: String;
   currentPage = 0;
   lastPage: boolean = false;
   products: Product[];
@@ -44,10 +45,14 @@ export class CityComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private offerService: OfferService,
-    private demandService: DemandService
-  ) {}
+    private demandService: DemandService,
+    public authService:AuthService
+  ) {
+    console.log(this.authService.user);
+  }
 
   ngOnInit(): void {
+    console.log(this.user);
     this.route.params.subscribe((params) => {
       this.city = params['city'];
       this.getProducts(this.city);
